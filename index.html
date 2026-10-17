@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Analyzing Customer Behavior</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Analyzing Customer Behavior</h1>
+    <nav aria-label="Main">
+      <button data-view="dashboard" class="active">Dashboard</button>
+      <button data-view="analysis">Customer Analysis</button>
+      <button data-view="dataset">Dataset</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="dashboard" class="view">
+      <div class="kpis" id="kpis"></div>
+      <div class="row3">
+        <div class="card"><h3>Sales by category</h3><div class="ch"><canvas id="cCat"></canvas></div></div>
+        <div class="card"><h3>Customers by age group</h3><div class="ch"><canvas id="cAge"></canvas></div></div>
+        <div class="card"><h3>Sales by city</h3><div class="ch"><canvas id="cCity"></canvas></div></div>
+      </div>
+    </section>
+
+    <section id="analysis" class="view" hidden>
+      <div class="row3">
+        <div class="card">
+          <h3>Popular product categories</h3>
+          <table><thead><tr><th>Category</th><th>Customers</th><th>Sales</th><th>Share</th></tr></thead><tbody id="catRows"></tbody></table>
+        </div>
+        <div class="card"><h3>Average spend per customer, by age group</h3><div class="ch"><canvas id="cSpendAge"></canvas></div></div>
+        <div class="card"><h3>Customers by spending level</h3><div class="ch"><canvas id="cSeg"></canvas></div></div>
+      </div>
+      <div class="kpis" id="insights"></div>
+    </section>
+
+    <section id="dataset" class="view" hidden>
+      <div class="card">
+        <h3>Sample dataset (<span id="count"></span> customers) &nbsp;<a href="data.csv" download>Download data.csv</a></h3>
+        <div class="scroll">
+          <table>
+            <thead><tr><th>ID</th><th>Name</th><th>Age</th><th>Gender</th><th>City</th><th>Category</th><th>Orders</th><th>Total spent</th></tr></thead>
+            <tbody id="dataRows"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>College mini project. All figures are calculated from the sample dataset in the browser.</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+id,name,age,gender,city,category,orders,total_spent
+C001,Neha Naik,22,Female,Thane,Fashion,2,1760
+C002,Aman Rane,26,Female,Pune,Beauty,12,16430
+C003,Neha Patil,19,Female,Thane,Beauty,7,8280
+C004,Neha Desai,56,Male,Mumbai,Fashion,1,1170
+C005,Pooja Patil,39,Female,Surat,Beauty,7,11120
+C006,Sneha Shah,52,Male,Pune,Groceries,8,6610
+C007,Sneha Kulkarni,23,Female,Mumbai,Electronics,10,82200
+C008,Priya Naik,49,Female,Nagpur,Electronics,10,55140
+C009,Arjun Iyer,57,Male,Pune,Fashion,11,23120
+C010,Divya Mehta,49,Male,Pune,Home & Kitchen,8,29020
+C011,Neha Mehta,45,Male,Nagpur,Fashion,11,25010
+C012,Divya Iyer,31,Male,Mumbai,Fashion,6,12820
+C013,Priya Shah,22,Female,Nagpur,Beauty,1,630
+C014,Siddharth Gupta,31,Female,Pune,Groceries,5,4160
+C015,Anjali Mehta,57,Female,Pune,Groceries,6,6890
+C016,Siddharth Sharma,20,Female,Thane,Electronics,10,50310
+C017,Neha Kulkarni,19,Male,Pune,Home & Kitchen,10,16770
+C018,Nikhil Desai,33,Male,Nagpur,Electronics,5,38270
+C019,Aman Mehta,58,Female,Surat,Electronics,2,16210
+C020,Siddharth Joshi,34,Male,Nashik,Fashion,8,21070
+C021,Kavya Mehta,29,Male,Mumbai,Groceries,1,650
+C022,Karan Pawar,50,Male,Pune,Groceries,9,9990
+C023,Rahul Iyer,23,Female,Surat,Home & Kitchen,4,15430
+C024,Karan Kulkarni,47,Male,Thane,Fashion,8,5820
+C025,Priya Gupta,50,Female,Pune,Fashion,10,15390
+C026,Sneha Naik,25,Male,Mumbai,Electronics,11,62660
+C027,Aman Pawar,52,Female,Mumbai,Beauty,5,2160
+C028,Rohan Kulkarni,20,Female,Pune,Fashion,2,4850
+C029,Anjali Desai,19,Male,Nagpur,Home & Kitchen,8,9300
+C030,Aman Patil,29,Female,Nashik,Groceries,1,440
+C031,Priya Pawar,51,Female,Surat,Groceries,9,7240
+C032,Karan Joshi,23,Male,Pune,Groceries,12,10460
+C033,Sneha Rane,53,Male,Pune,Fashion,12,35920
+C034,Nikhil Patil,42,Male,Pune,Fashion,11,14060
+C035,Siddharth Desai,35,Female,Mumbai,Beauty,9,13470
+C036,Yash Sharma,56,Female,Mumbai,Electronics,1,2860
+C037,Siddharth Rane,52,Male,Pune,Groceries,7,7050
+C038,Isha Iyer,47,Female,Surat,Fashion,9,21200
+C039,Yash Rane,49,Male,Pune,Fashion,8,21210
+C040,Yash Mehta,30,Female,Thane,Groceries,2,1130
