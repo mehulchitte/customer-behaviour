@@ -81,26 +81,6 @@ def index():
     d=get_df()
     return render_template("index.html", filename=filename_current, rows=len(d), cols=len(d.columns), page="dashboard")
 
-@app.route("/insights")
-def insights_page():
-    d=get_df()
-    return render_template("insights.html", filename=filename_current, rows=len(d), cols=len(d.columns), page="insights")
-
-@app.route("/statistics")
-def statistics_page():
-    d=get_df()
-    return render_template("statistics.html", filename=filename_current, rows=len(d), cols=len(d.columns), page="statistics")
-
-@app.route("/dataset")
-def dataset_page():
-    d=get_df()
-    return render_template("dataset.html", filename=filename_current, rows=len(d), cols=len(d.columns), page="dataset")
-
-@app.route("/campaigns")
-def campaigns_page():
-    d=get_df()
-    return render_template("campaigns.html", filename=filename_current, rows=len(d), cols=len(d.columns), page="campaigns")
-
 @app.route("/api/analysis")
 def api_analysis():
     return jsonify(analyze(get_df()))
@@ -145,35 +125,6 @@ def upload():
         flash(f"Loaded {file.filename} successfully.")
     except Exception as e: flash(f"Could not load CSV: {e}")
     return redirect(url_for("index"))
-
-@app.route("/api/campaign-ideas")
-def campaign_ideas():
-    df = get_df()
-    df = clean_names(df)
-    ideas = []
-    if "Segment" in df.columns and "SpendingScore" in df.columns:
-        d = df.copy()
-        d["SpendingScore"] = pd.to_numeric(d["SpendingScore"], errors="coerce")
-        for seg, part in d.groupby("Segment", dropna=False):
-            score = part["SpendingScore"].mean()
-            count = int(len(part))
-            name = str(seg) if pd.notna(seg) else "Unknown"
-            if pd.notna(score) and score >= 66:
-                idea = "Reward this group with loyalty points or early access."
-                label = "Reward loyal spenders"
-            elif pd.notna(score) and score <= 33:
-                idea = "Try a small first-purchase offer and helpful product recommendations."
-                label = "Encourage first purchase"
-            else:
-                idea = "Test a personalized bundle or category-based recommendation."
-                label = "Personalize the offer"
-            ideas.append({"segment": name, "customers": count, "average_score": round(float(score), 1) if pd.notna(score) else None,
-                          "title": label, "idea": idea})
-    elif "SpendingScore" in df.columns:
-        s = pd.to_numeric(df["SpendingScore"], errors="coerce")
-        ideas = [{"segment":"All customers","customers":int(len(df)),"average_score":round(float(s.mean()),1) if s.notna().any() else None,
-                  "title":"Test a targeted offer","idea":"Compare a small personalized offer with your usual message and track the response."}]
-    return jsonify({"ideas": ideas[:8], "source_rows": int(len(df))})
 
 @app.route("/api/export")
 def export_data():

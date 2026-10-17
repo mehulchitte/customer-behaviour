@@ -8,13 +8,13 @@
 </head><body>
 <div class="layout">
 <aside class="sidebar">
-  <a class="brand" href="/dashboard"><div class="brand-icon">C</div><div><b>CustomerLens</b><small>BEHAVIOR ANALYTICS</small></div></a>
+  <a class="brand" href="#overview"><div class="brand-icon">C</div><div><b>CustomerLens</b><small>BEHAVIOR ANALYTICS</small></div></a>
   <div class="nav-label">WORKSPACE</div>
-  <a class="nav {% if page == 'dashboard' %}active{% endif %}" href="/dashboard"><span>◫</span> Dashboard</a>
-  <a class="nav {% if page == 'insights' %}active{% endif %}" href="/insights"><span>⌁</span> Customer insights</a>
-  <a class="nav {% if page == 'statistics' %}active{% endif %}" href="/statistics"><span>▤</span> Statistics lab</a>
-  <a class="nav {% if page == 'dataset' %}active{% endif %}" href="/dataset"><span>▦</span> Dataset explorer</a>
-  <a class="nav {% if page == 'campaigns' %}active{% endif %}" href="/campaigns"><span>✦</span> Campaign studio</a>
+  <a class="nav {% if page == 'dashboard' %}active{% endif %}" href="#overview"><span>◫</span> Dashboard</a>
+  <a class="nav {% if page == 'insights' %}active{% endif %}" href="#insights"><span>⌁</span> Customer insights</a>
+  <a class="nav {% if page == 'statistics' %}active{% endif %}" href="#statistics"><span>▤</span> Statistics lab</a>
+  <a class="nav {% if page == 'dataset' %}active{% endif %}" href="#dataset"><span>▦</span> Dataset explorer</a>
+  
   <div class="side-note"><div class="spark">✦</div><b>Data tells a story.</b><p>Turn customer data into practical business decisions.</p></div>
   <div class="profile"><div class="avatar">CL</div><div><b>Mini Project</b><small>Python · Statistics · EDA</small></div><span class="online"></span></div>
 </aside>
@@ -36,7 +36,7 @@
  <article class="panel"><div class="panel-head"><div><div class="eyebrow">BRING YOUR DATA</div><h2>Upload a CSV</h2><p>Use your own customer dataset.</p></div></div><form class="upload-form" action="/upload" method="post" enctype="multipart/form-data"><label class="dropzone"><span class="upload-symbol">↑</span><b>Choose a .csv file</b><small>Maximum 100,000 rows · 60 columns</small><input type="file" name="dataset" accept=".csv" required></label><button class="btn primary full" type="submit">Load dataset</button></form><div class="file-name">Active file: <b id="fileName">{{filename}}</b></div></article>
  <article class="panel wide"><div class="panel-head"><div><div class="eyebrow">DATA PREVIEW</div><h2>Customer records</h2><p>First rows from the currently loaded dataset.</p></div><span class="pill" id="previewCount">Preview</span></div><div class="table-scroll"><table><thead id="previewHead"></thead><tbody id="previewBody"></tbody></table></div></article>
 </section>
-<footer>CustomerLens <span>•</span> Educational mini project built with Flask, Pandas, NumPy, and Chart.js.</footer>
+<footer>CustomerLens <span>•</span> Flask · Pandas · NumPy · Chart.js</footer>
 </main></div>
 <div id="toast" class="toast"></div>
 <script src="{{ url_for('static', filename='app.js') }}"></script>
